@@ -1,0 +1,42 @@
+//Exercise 3.17: 
+//Read a sequence of words from cin and store the values a
+//vector. After you’ve read all the words, process the vector and change
+//each word to uppercase. Print the transformed elements, eight words to a
+//line.
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cctype>
+using std::cin; using std::cout; using std::vector; using std::string;
+using std::endl; 
+
+int main()
+{
+ 
+    // read cin and store in a vector
+    
+    string words;
+    vector<string> ivec;
+    
+    while (cin >> words)
+        ivec.push_back(words);
+            
+    
+    
+    for (int v = 0; v <= ivec.size(); ++v){ //capitalization loop of specific word
+        auto &vref = ivec[v];
+            for (int i = 0; i <= vref.size(); ++i)
+                vref[i] = toupper(vref[i]); 
+    
+    }
+    
+    //output word, space, word, space for 8 words    
+    int wordcount = ivec.size();
+    
+    
+    
+    
+    return 0;
+
+}
