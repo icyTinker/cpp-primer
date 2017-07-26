@@ -13,7 +13,7 @@ using std::endl;
 
 int main()
 {
- 
+    
     // read cin and store in a vector
     
     string words;
@@ -22,21 +22,42 @@ int main()
     while (cin >> words)
         ivec.push_back(words);
             
+    //iterate through vector elements, then string elements to capitalize 
     
-    
-    for (int v = 0; v <= ivec.size(); ++v){ //capitalization loop of specific word
-        auto &vref = ivec[v];
-            for (int i = 0; i <= vref.size(); ++i)
-                vref[i] = toupper(vref[i]); 
-    
+  
+    for (auto &vref : ivec)
+    {
+        for (auto &sref : vref)
+        {
+            sref = toupper(sref);     
+        }
+        
     }
     
     //output word, space, word, space for 8 words    
-    int wordcount = ivec.size();
+    //int wordcount = ivec.size();
+    
+    int start = 0;
+    int const cluster_size = 8;
+    int range = 8;
+    int cluster_num = (ivec.size() / cluster_size);
+    int remainder = 
+    
+        
+        for (int i = 0; i < cluster_num; ++i ) //need to loop through the clusternum
+        { 
+            for (int n = start; n < range; ++n)
+            {
+                cout << ivec[n] << " ";
+                ++start;
+            }
+        
+            range = start + cluster_size;
+            cout << endl;
+        }
     
     
-    
-    
+        
     return 0;
 
 }
