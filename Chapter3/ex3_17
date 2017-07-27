@@ -13,18 +13,12 @@ using std::endl;
 
 int main()
 {
-    
-    // read cin and store in a vector
-    
     string words;
     vector<string> ivec;
     
     while (cin >> words)
         ivec.push_back(words);
             
-    //iterate through vector elements, then string elements to capitalize 
-    
-  
     for (auto &vref : ivec)
     {
         for (auto &sref : vref)
@@ -33,31 +27,30 @@ int main()
         }
         
     }
-    
-    //output word, space, word, space for 8 words    
-    //int wordcount = ivec.size();
-    
-    int start = 0;
+        
+    int start = 0, range = 8;
     int const cluster_size = 8;
-    int range = 8;
     int cluster_num = (ivec.size() / cluster_size);
-    int remainder = 
+    int remainder = (ivec.size() % cluster_size);
     
         
-        for (int i = 0; i < cluster_num; ++i ) //need to loop through the clusternum
-        { 
-            for (int n = start; n < range; ++n)
-            {
-                cout << ivec[n] << " ";
-                ++start;
-            }
-        
-            range = start + cluster_size;
-            cout << endl;
+    for (int i = 0; i < cluster_num; ++i )
+    { 
+        for (int n = start; n < range; ++n)
+        {
+            cout << ivec[n] << " ";
+            ++start;
         }
+
+        range = start + cluster_size;
+        cout << endl;
+    }
     
     
-        
+    for (int x = ivec.size() - remainder; x < ivec.size(); ++x)
+        cout << ivec[x] << " ";
+    
+
     return 0;
 
 }
