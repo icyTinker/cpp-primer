@@ -17,7 +17,14 @@ int main()
     while (cin >> val)
         ivec.push_back(val);
     
-    int cnt1 = 0;
+    int edge_len = (ivec.size() / 2);
+        
+            
+    for (int cnt1 = 0; cnt1 <= edge_len; ++cnt1)
+        cout << ivec[cnt1] + ivec[(ivec.size() -1) - cnt1] << " ";
+        
+        
+    
     
     
     
