@@ -1,0 +1,59 @@
+//Exercise 3.21:  rewrite this using iterators
+//Write a program to print the size and contents of the
+//vectors from exercise 3.13. Check whether your answers to that exercise
+//were correct. If not, restudy § 3.3.1 (p. 97) until you understand why you
+//were wrong.
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using std::cout; using std::cin; using std::endl; using std::vector; 
+using std::string;
+
+int main()
+{
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10, 42);
+    vector<int> v4{10};
+    vector<int> v5{10, 42};
+    vector<string> v6{10};
+    vector<string> v7{10, "hi"};
+    
+    vector<vector<int> > ivec{v1, v2, v3, v4, v5};
+    vector<vector<string> > svec{v6, v7};
+    
+    
+    
+    for (auto vcon = ivec.begin(); vcon != ivec.end(); ++vcon)
+    {    
+        if (vcon->empty())
+            cout << "Vector is empty ";
+        else
+        { 
+            cout << "Vector size is " << vcon->size()  << " ";
+            for (auto n = vcon->begin(); n != vcon->end(); ++n)
+                cout << *n << " ";
+        }
+        cout << endl;
+    }
+    
+     
+    for (auto vcon = svec.begin(); vcon != svec.end(); ++vcon)
+    {    
+        if (vcon->empty())
+            cout << "Vector is empty ";
+        else
+        { 
+            cout << "Vector size is " << vcon->size()  << " ";
+            for (auto n = vcon->begin(); n != vcon->end(); ++n)
+                cout << *n << " ";
+        }
+        cout << endl;
+    }
+    
+    
+    return 0;    
+    
+}
