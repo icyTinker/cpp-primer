@@ -1,0 +1,28 @@
+//Exercise 3.23: 
+//Write a program to create a vector with ten int elements.
+//Using an iterator, assign each element a value that is twice its current value.
+//Test your program by printing the vector.
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+using std::cout; using std::cin; using std::endl; using std::vector; 
+using std::string;
+
+int main()
+{
+    
+    vector<int> ivec{2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+    
+    for (auto it = ivec.begin(); it != ivec.end(); ++it)
+    {    
+        *it = *it *2;
+        cout << *it << " ";
+    }
+    
+    
+    return 0;    
+    
+}
