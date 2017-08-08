@@ -1,0 +1,38 @@
+//As an example, let’s assume that we have a collection of grades that range from 0 
+//through 100. We’d like to count how many grades fall into various clusters of 10.
+
+//    1 first range
+//    2 check all grades
+//    3 print counter for that range
+//    4 reset counter
+//    
+//    5 second range
+
+#include <iostream>
+#include <vector>
+
+using std::cout; using std::cin; using std::endl; using std::vector; 
+
+
+int main()
+{
+  
+    vector<int> inputgrades;
+    vector<int> ranges(11);
+    
+    for (int i; cin >> i; inputgrades.push_back(i));
+        
+    for (auto i = inputgrades.begin(); i != inputgrades.end(); ++i)
+    {
+        int g = *i / 10;
+        auto git = ranges.begin();
+        git += g;
+        *git += 1;
+    }
+        
+    for (auto n = ranges.begin(); n != ranges.end(); ++n)
+        cout ""<< *n << " ";
+    
+    return 0;    
+    
+}
